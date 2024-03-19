@@ -51,7 +51,7 @@ def initialize_training_file(initial_data):
 
 def start_maintenance_assistant():
     
-    ai_client = OpenAI(api_key = "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")
+    ai_client = OpenAI(api_key = "AI_CLIENT_API_TOKEN")
 
     data = {'role': ['system'], 'content': ['You are an assistant who helps with malfunctioning equipment.']}
 
@@ -90,7 +90,7 @@ def start_maintenance_assistant():
 
             await message.channel.send(response)
 
-    maintenance_assistant_client.run("MTIxOTIwNzIzMjk1NzMxNzE0MA.GzZ4XK.bLuqgsrIZkuEHK9hgPIu5pK88hJZGkUND35mvw")
+    maintenance_assistant_client.run("MAINTENANCE_ASSISTANT_API_TOKEN")
 
 
 
@@ -133,11 +133,11 @@ def alert_via_server(channel_id, alert_message):
                     await discord_client.get_channel(channel_id).send("Maintenance Initiated")
 
 
-    discord_client.run("MTIxNzM1MDA3MzQwNzYzNTQ2Ng.GaFc8O.DWoUfId5oo6V1pU1AHGJe_1AqdqrxdXapbPd2g")
+    discord_client.run("ALERTER_CLIENT_API_TOKEN")
 
 def alert_via_call(phone_number = "+916383006581"):
-    account_sid = "ACd2ae0efc35de4366e24c5c6e84245faf"
-    auth_token = "6aa3f162ceb8e183d94a27162ef1b2a9"
+    account_sid = "ACCOUNT_SID"
+    auth_token = "AUTH_TOKEN"
     client = Client(account_sid, auth_token)
 
     call = client.calls.create(
